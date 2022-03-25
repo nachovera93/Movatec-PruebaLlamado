@@ -1,0 +1,73 @@
+version: "2.0"
+stories:
+
+  - story: whatsapp intent
+    steps:
+    - intent: saludos
+    - action: action_slot_reset
+    - action: action_hello
+    - intent: afirmación
+    - action: action_ask_question
+    - intent: Pasar_whatsapp
+    - action: action_dejar_mismo_contacto_celular
+    - checkpoint: action_whatsapp
+
+
+  - story: whatsapp dejar numero
+    steps:
+    - checkpoint: action_whatsapp
+    - intent: negación
+    - action: action_dejar_otro_contacto_celular
+#    - intent: numeroTelefono
+#      entities:
+#      - numero: 56372819
+#    - action: numero_form
+#    - active_loop: numero_form
+#    - slot_was_set:
+#      - numero: 56372819
+#    - slot_was_set:
+#      - requested_slot: null
+#    - active_loop: null
+    - action: action_el_numero_seria
+    - checkpoint: action_numero_correcto?
+
+  - story: whatsapp mismo numero
+    steps:
+    - checkpoint: action_whatsapp
+    - intent: afirmación
+    - action: action_te_enviamos_en_breve 
+    - action: utter_despedida
+    - action: action_restart2
+
+
+  - story: whatsapp mismo numero
+    steps:
+    - checkpoint: action_numero_correcto?
+    - intent: negación
+    - action: action_repiteme_numero
+#    - intent: numeroTelefono
+#      entities:
+#      - numero: 56372819
+#    - action: numero_form
+#    - active_loop: numero_form
+#    - slot_was_set:
+#      - numero: 56372819
+#    - slot_was_set:
+#      - requested_slot: null
+#    - active_loop: null
+    - action: action_el_numero_seria
+    - checkpoint: action_numero_correcto?
+
+  - story: whatsapp mismo numero
+    steps:
+    - checkpoint: action_numero_correcto?
+    - intent: afirmación
+    - action: action_te_enviamos_en_breve
+    - action: utter_despedida
+    - action: action_restart2
+
+
+  
+
+   
+  

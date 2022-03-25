@@ -1,0 +1,12 @@
+version: "2.0"
+rules:
+
+  - rule: despedida
+    steps:
+      - intent: despedida
+      - action: utter_despedida
+      - action: action_restart2  
+
+
+ 
+

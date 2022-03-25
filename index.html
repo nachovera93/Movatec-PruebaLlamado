@@ -1,0 +1,56 @@
+<html>
+   
+    <body>
+        <style>
+        .rw-conversation-container .rw-header{background-color:hsla(214, 36%, 55%, 1);}
+        .rw-conversation-container .rw-messages-container .rw-message .rw-client{background-color: hsla(214, 36%, 55%, 1);}
+        .rw-launcher{background-color: hsla(214, 36%, 55%, 1);}
+        .rw-conversation-container .rw-reply{background-color: hsla(214, 36%, 55%, 1); border: 1px solid hsla(214, 36%, 55%, 1);}
+        .rw-header
+    </style>
+        <script>!(function () {
+            let e = document.createElement("script"),
+              t = document.head || document.getElementsByTagName("head")[0];
+            (e.src =
+              "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+              (e.async = !0),
+              (e.onload = () => {
+                window.WebChat.default(
+                  {
+                    initPayload: '/saludos',
+                    customData: { language: "es" },
+                    socketUrl: "http://localhost:5005",//,"http://172.16.1.72:5008"
+                    title: 'Evva',
+                    subtitle: 'Asistente virtual',
+                    profileAvatar: "./bot.png",
+                    showMessageDate: true,
+                    inputTextFieldHint: "Escribe tus consultas ..",
+                    showFullScreenButton:true
+                    //customMessageDelay: (message) => {
+                    //  let delay = message.length * 40;
+                    //  if (delay > 3 * 1000) delay = 3 * 1000;
+                    //  if (delay < 800) delay = 800;
+                    //  return delay;
+                   // }
+                    // add other props here
+                  },
+                  null
+                );
+              }),
+              t.insertBefore(e, t.firstChild);
+          })();
+          localStorage.clear();
+          </script>
+    </body>
+
+
+   
+
+<!--welcomeMessage = "Hola soy Eva, que necesitas?",->
+
+</body>
+
+>>>>>>> 79959f04a6338d858c864e916aa10fcfc8772ea2
+</html>
+
+<!--45.228.211.133:5002-->

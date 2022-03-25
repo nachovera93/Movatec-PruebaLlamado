@@ -1,0 +1,113 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- gracias
+- saludos
+- como_estas
+- que_fecha
+- que_hora
+- negación
+- preguntar_nombre
+- afirmación
+- out_of_scope
+- eres_humano
+- despedida
+- bien
+- contactar
+- numeroTelefono
+- CorreoElectronico
+- callbot
+- whatsapp
+- Horas
+- citofoniaip
+- centralesvoip
+- vicidial
+- chatbot
+- me_repite
+- Pasar_whatsapp
+
+
+entities:
+- email
+- numero
+
+
+slots:
+  email:
+    type: text
+    influence_conversation: true
+  numero:
+    type: text
+    influence_conversation: true
+  
+
+responses:
+  utter_default:
+  - text: Disculpe, no te entendí ¿me lo podrías repetir? 
+  utter_bot:
+  - text: Me llamo Eva y soy una asistente virtual. 
+  utter_como_estoy:
+  - text: Yo espectacular y tu? 
+  utter_porque:
+  - text: Por que todo va muy bien!
+  utter_espectacular:
+  - text: Espectacular!
+  utter_denada:
+  - text: De nada! :)
+  utter_llamada:
+  - text: ok! Deseas una llamada? 
+  utter_email:
+  - text: Deseas que te contactemos a través de un correo electrónico?
+  utter_dame_email:
+  - text: Ingresa tu email porfavor 
+  utter_no_contactar:
+  - text: Ok! no hay problema, necesitas algo más?
+  utter_nueva_consulta:
+  - text: Ok! sobre que necesitas información?
+  utter_despedida:
+  - text: Que tengas un buen día, adios.
+
+actions:
+- action_restart2
+- action_slot_reset
+- action_dar_hora
+- action_fecha
+- action_dar_email2
+- action_repiteme_email
+- action_email_enviado
+- action_dar_email
+- action_te_enviamos_en_breve
+- action_repiteme_numero
+- action_el_numero_seria
+- action_dejar_otro_contacto_celular
+- action_dejar_mismo_contacto_celular
+- action_ask_question
+- action_hello
+- utter_despedida
+- utter_nueva_consulta
+- utter_no_contactar
+- utter_dame_email
+- utter_email
+- utter_llamada
+- utter_denada
+- utter_espectacular
+- utter_porque
+- utter_como_estoy
+- utter_bot
+- utter_default
+
+
+forms:
+  email_form:
+    required_slots:
+      email:
+      - entity: respuesta
+        type: from_entity
+  numero_form:
+    required_slots:
+      numero:
+      - entity: respuesta
+        type: from_entity
+ 
