@@ -129,7 +129,7 @@ class ActionHello(Action):
              dispatcher.utter_message(f'Buenas tarde, mi nombre es evva y soy un bot creado por movatec. Estoy entrenada para realizar varios procesos ¿Te gustaría una demostración? ')
         else:
              dispatcher.utter_message(f'Buenos días, mi nombre es evva y soy un bot creado por movatec. Estoy entrenada para realizar varios procesos ¿Te gustaría una demostración?')
-        headers2 = {'Content-type': 'application/json',}
+        headers2 = {'Content-type': 'application/json'}
         data2 = '{"sender": "test", "message": "alo"}'
         response2 = requests.post('http://localhost:5013/webhooks/rest/webhook', headers=headers2, data=data2)
         print(response2.text)
