@@ -134,6 +134,7 @@ class ActionHello(Action):
         data2 = '{"sender": f"{uniqueid}", "message": "alo"}'
         response2 = requests.post('http://10.3.0.5:5013/webhooks/rest/webhook', headers=headers2, data=data2)
         #print(response2.text)
+        dispatcher.utter_message(response2.text)
         return []
 
 class Consulta(Action):
