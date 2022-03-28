@@ -133,7 +133,7 @@ class ActionHello(Action):
         headers2 = {'Content-type': 'application/json'}
         data2 = '{"sender": f"test", "message": "alo"}'
         response2 = requests.post('http://10.3.0.5:5013/webhooks/rest/webhook', headers=headers2, data=data2)
-        #print(response2.text)
+        print(response2.text)
         #dispatcher.utter_message(response2.text)
         return []
 
