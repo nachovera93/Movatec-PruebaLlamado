@@ -121,18 +121,19 @@ def Updates(tipo_contacto,motivo,compromiso_p,derivacion,fecha_com,entrega_info,
 class ActionHello(Action):
     def name(self):
         return "action_hello"
-
+       
     def run(self, dispatcher, tracker, domain):
-        
+        global uniqueid
+        uniqueid = tracker.sender_id
         t = datetime.datetime.now()
         if 23 >= int(t.hour) >= 12:
              dispatcher.utter_message(f'Buenas tarde, mi nombre es evva y soy un bot creado por movatec. Estoy entrenada para realizar varios procesos ¿Te gustaría una demostración? ')
         else:
              dispatcher.utter_message(f'Buenos días, mi nombre es evva y soy un bot creado por movatec. Estoy entrenada para realizar varios procesos ¿Te gustaría una demostración?')
         headers2 = {'Content-type': 'application/json'}
-        data2 = '{"sender": "test", "message": "alo"}'
-        response2 = requests.post('http://localhost:5013/webhooks/rest/webhook', headers=headers2, data=data2)
-        print(response2.text)
+        data2 = '{"sender": f"{uniqueid}", "message": "alo"}'
+        response2 = requests.post('http://10.3.0.5:5013/webhooks/rest/webhook', headers=headers2, data=data2)
+        #print(response2.text)
         return []
 
 class Consulta(Action):

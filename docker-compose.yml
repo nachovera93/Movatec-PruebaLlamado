@@ -1,21 +1,21 @@
 version: '3'
 services:
     rasa:
-      container_name: "rasa_server"
+      container_name: "rasa_server_prueballamado"
       user: root
       build: 
         context:  .
       volumes:
       - "./:/app"
       ports: 
-        - "5005:5005"
+        - "5012:5005"
     action_server:
-      container_name: "action_server"
+      container_name: "action_server_prueballamado"
       build: 
         context: actions
       volumes:
         - ./actions:/app/actions
         - ./data:/app/data
       ports:
-        - 5055:5055
+        - 5062:5055
       
